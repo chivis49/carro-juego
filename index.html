@@ -4,19 +4,39 @@
   <meta charset="UTF-8">
   <title>Juego de Carros</title>
   <style>
-    canvas { background: #eee; display: block; margin: 0 auto; }
+    canvas {
+      display: block;
+      margin: 0 auto;
+      background: lightgray;
+      border: 2px solid black;
+    }
     #game-over {
-      text-align: center;
       display: none;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 24px;
+      color: red;
+    }
+    #restart-button {
+      display: none;
+      margin: 10px auto;
+      padding: 10px 20px;
+      font-size: 18px;
+      background: green;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
   <canvas id="gameCanvas" width="400" height="600"></canvas>
-  <div id="game-over">
-    <h2>Fin del juego</h2>
-    <button onclick="restartGame()">Reiniciar</button>
-  </div>
+  <div id="game-over">¡Fin del juego!</div>
+  <button id="restart-button" onclick="restartGame()">Reiniciar</button>
+
+  <audio id="crash-sound" src="https://www.soundjay.com/transportation/car-crash-1.mp3" preload="auto"></audio>
+
   <script src="game.js"></script>
 </body>
 </html>
